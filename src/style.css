@@ -51,6 +51,7 @@ h2 {
   line-height: 1.8;
   font-weight: bold;
   vertical-align: super;
+  margin-right: 2px;
 }
 .time small {
   line-height: 36px;
