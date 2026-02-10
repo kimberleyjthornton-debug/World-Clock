@@ -1,6 +1,3 @@
-console.log(moment);
-console.log(moment.tz);
-
 function updateLondonTime() {
   let londonElement = document.querySelector("#london");
   let londonDateElement = londonElement.querySelector(".date");
@@ -17,15 +14,16 @@ setInterval(updateLondonTime, 1000);
 
 function updateNewYorkTime() {
   let newYorkElement = document.querySelector("#new-york");
-  let newYorkDateElement = newYorkElement.querySelector(".date");
-  let newYorkTimeElement = newYorkElement.querySelector(".time");
-  let newYorkTime = moment().tz("America/New_York");
-  newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
-  newYorkTimeElement.innerHTML = newYorkTime.format(
-    "h:mm:ss [<small>]A[</small>]",
-  );
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tz("America/New_York");
+    newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
+    newYorkTimeElement.innerHTML = newYorkTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
 }
-
 updateNewYorkTime();
 setInterval(updateNewYorkTime, 1000);
 
