@@ -5,7 +5,7 @@ function updateLondonTime() {
   let londonTime = moment().tz("Europe/London");
   londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
   londonTimeElement.innerHTML = londonTime.format(
-    "h:mm:ss [<small>]A[</small>]",
+    "h:mm:ss[<small>]A[</small>]",
   );
 }
 
@@ -20,7 +20,7 @@ function updateNewYorkTime() {
     let newYorkTime = moment().tz("America/New_York");
     newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
     newYorkTimeElement.innerHTML = newYorkTime.format(
-      "h:mm:ss [<small>]A[</small>]",
+      "h:mm:ss[<small>]A[</small>]",
     );
   }
 }
@@ -33,7 +33,7 @@ function updateTokyoTime() {
   let tokyoTimeElement = tokyoElement.querySelector(".time");
   let tokyoTime = moment().tz("Asia/Tokyo");
   tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
-  tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss [<small>]A[</small>]");
+  tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss[<small>]A[</small>]");
 }
 
 updateTokyoTime();
@@ -53,7 +53,7 @@ function updateCity(event) {
      <h2>${cityName}</h2>
       <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
       </div>
-     <div class="time">${cityTime.format("h:mm:ss [<small>]A[</small>]")}</div>
+     <div class="time">${cityTime.format("h:mm:ss[<small>]A[</small>]")}</div>
     </div>`;
   setInterval(updateCity, 1000);
 }
